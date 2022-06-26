@@ -36,6 +36,8 @@ class MasterAPI {
         options: options(),
       );
 
+      print(res);
+
       return Right(ProfileModel.fromJson(res.data));
     } on DioError catch (e) {
       return Left(ProfileModel.fromJson(e.response!.data!));
